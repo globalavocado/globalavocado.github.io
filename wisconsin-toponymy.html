@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>French, German and Native American place names in Wisconsin</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href='https://fonts.googleapis.com/css?family=IM+Fell+French+Canon' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/mappage.css" />
+    <link rel="stylesheet" href="css/label.css" />
+
+    <style>
+
+        body {
+          font-family: 'IM Fell French Canon', serif;
+        }
+
+        img {
+          padding: 0px 5px;
+          max-width: 30px;
+        }
+
+    </style>
+    
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="js/label.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/0.26.0/Autolinker.min.js"></script>
+
+  </head>
+
+  <body>
+    <h1><img src="./images/fabrique-au-quebec-hi.png">Toponymie française, allemande et autochtone dans le Wisconsin</h1>
+    <h3>French, German and Native American place names in Wisconsin</h3>
+
+    <p>Until the end of the 19th Century, Wisconsin experienced three great waves of immigration. The first Native Americans to settle were the Oneida, around the year 1000. Toponymy indicates that these were later joined by Menominee, Ojibwe, Potawatomi and others, from around 1500. <sup><a href="https://books.google.co.uk/books?id=P1fzAAAAMAAJ" target="_blank">source</a></sup> The French arrived from the 17th Century onwards, with New France covering large parts of North America by 1750. The third wave of colonisation brought mainly immigrants from German-speaking countries, Benelux and Scandinavia. By 1885, more than half of Wisconsin's annual immigrant contingent was German-born.<sup><a href="http://www.jstor.org/stable/199945" target="_blank">source</a></sup></p>
+
+  <div id="map"></div>
+  
+
+  <script type="text/javascript" src="./data/us-states.js"></script>
+  <script type="text/javascript" src="./data/populatedplaces.js"></script>
+
+  <script type="text/javascript">
+
+    var map = L.map('map', {
+      center: [44.08, -89.5],
+      zoom: 8,
+    });
+
+    var additional_attrib = ' data by: <a href="http://legis.wisconsin.gov/gis/statewidedata">Wisconsin GIS Portal</a>';
+    var feature_group = new L.featureGroup([]);
+    var raster_group = new L.LayerGroup([]);
+
+    var thunderforest_map = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', { 
+      attribution: additional_attrib + ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    }); 
+    thunderforest_map.addTo(map);
+
+function borderstyle(feature){
+  return{
+      weight: 1,
+      opacity: 0.4,
+      color: 'green',
+      fillOpacity: 0.1
+    };
+}
+    
+L.geoJson(states, {style: borderstyle}).addTo(map);
+
+
+function getColor(toponymy) {
+    return  toponymy == 'French' ? 'blue' :
+            toponymy == 'German' ? 'red' :
+            toponymy == 'native' ? 'orange' :
+                                    'grey';
+};
+
+function onEachFeatureToponymy(feature, layer) {
+  labelname = feature.properties.toponymy
+  layer.bindLabel(feature.properties.name)
+}
+
+function placesstyle(feature) {
+    return {
+        fillColor: getColor(feature.properties.toponymy),
+        weight: 0.5,
+        opacity: 0.8,
+        color: 'white',
+        fillOpacity: 0.4
+    };
+}
+
+L.geoJson(populatedplaces, {
+  style: placesstyle,
+  onEachFeature: onEachFeatureToponymy
+  }).addTo(map);
+
+
+    var layersControl = L.control.layers();
+
+    L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
+
+  </script>
+  </body>
+</html>

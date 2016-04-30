@@ -1,0 +1,18 @@
+body {
+  font-family: 'IM Fell French Canon', serif;
+}
+
+img {
+  padding: 0px 5px;
+  max-width: 30px;
+}
+
+#text{
+  width: 30%;
+  padding-right: 10px;
+}
+
+#map { 
+
+  height: 430px; 
+      }

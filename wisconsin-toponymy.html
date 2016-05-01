@@ -35,72 +35,97 @@
 
     <p>Until the end of the 19th Century, Wisconsin experienced three great waves of immigration. The first Native Americans to settle were the Oneida, around the year 1000. Toponymy indicates that these were later joined by Menominee, Ojibwe, Potawatomi and others, from around 1500. <sup><a href="https://books.google.co.uk/books?id=P1fzAAAAMAAJ" target="_blank">source</a></sup> The French arrived from the 17th Century onwards, with New France covering large parts of North America by 1750. The third wave of colonisation brought mainly immigrants from German-speaking countries, Benelux and Scandinavia. By 1885, more than half of Wisconsin's annual immigrant contingent was German-born.<sup><a href="http://www.jstor.org/stable/199945" target="_blank">source</a></sup></p>
 
-  <div id="map"></div>
-  
-
-  <script type="text/javascript" src="./data/us-states.js"></script>
-  <script type="text/javascript" src="./data/populatedplaces.js"></script>
-
-  <script type="text/javascript">
-
-    var map = L.map('map', {
-      center: [44.08, -89.5],
-      zoom: 8,
-    });
-
-    var additional_attrib = ' data by: <a href="http://legis.wisconsin.gov/gis/statewidedata">Wisconsin GIS Portal</a>';
-    var feature_group = new L.featureGroup([]);
-    var raster_group = new L.LayerGroup([]);
-
-    var thunderforest_map = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', { 
-      attribution: additional_attrib + ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-    }); 
-    thunderforest_map.addTo(map);
-
-function borderstyle(feature){
-  return{
-      weight: 1,
-      opacity: 0.4,
-      color: 'green',
-      fillOpacity: 0.1
-    };
-}
+    <div id="map"></div>
     
-L.geoJson(states, {style: borderstyle}).addTo(map);
+
+    <script type="text/javascript" src="./data/us-states.js"></script>
+    <script type="text/javascript" src="./data/populatedplaces.js"></script>
+
+    <script type="text/javascript">
+
+      var map = L.map('map', {
+        center: [44.08, -89.5],
+        zoom: 8,
+      });
+
+      var additional_attrib = ' data by: <a href="http://legis.wisconsin.gov/gis/statewidedata" target="_blank">Wisconsin GIS Portal</a>';
+      var feature_group = new L.featureGroup([]);
+      var raster_group = new L.LayerGroup([]);
+
+      var thunderforest_map = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', { 
+        attribution: ' &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + additional_attrib
+      }); 
+      thunderforest_map.addTo(map);
+
+      function borderstyle(feature){
+        return{
+            weight: 1,
+            opacity: 0.4,
+            color: 'green',
+            fillOpacity: 0.1
+          };
+      }
+          
+      L.geoJson(states, {style: borderstyle}).addTo(map);
 
 
-function getColor(toponymy) {
-    return  toponymy == 'French' ? 'blue' :
-            toponymy == 'German' ? 'red' :
-            toponymy == 'native' ? 'orange' :
-                                    'grey';
-};
+      function getColor(toponymy) {
+          return  toponymy == 'French' ? 'blue' :
+                  toponymy == 'German' ? 'red' :
+                  toponymy == 'native' ? 'orange' :
+                                          'grey';
+      };
 
-function onEachFeatureToponymy(feature, layer) {
-  labelname = feature.properties.toponymy
-  layer.bindLabel(feature.properties.name)
-}
+      function onEachFeatureToponymy(feature, layer) {
+        labelname = feature.properties.toponymy
+        layer.bindLabel(feature.properties.name)
+      }
 
-function placesstyle(feature) {
-    return {
-        fillColor: getColor(feature.properties.toponymy),
-        weight: 0.5,
-        opacity: 0.8,
-        color: 'white',
-        fillOpacity: 0.4
-    };
-}
+      function placesstyle(feature) {
+          return {
+              fillColor: getColor(feature.properties.toponymy),
+              weight: 0.5,
+              opacity: 0.8,
+              color: 'white',
+              fillOpacity: 0.4
+          };
+      }
 
-L.geoJson(populatedplaces, {
-  style: placesstyle,
-  onEachFeature: onEachFeatureToponymy
-  }).addTo(map);
+      L.geoJson(populatedplaces, {
+        style: placesstyle,
+        onEachFeature: onEachFeatureToponymy
+        }).addTo(map);
 
 
-    var layersControl = L.control.layers();
+      var layersControl = L.control.layers();
 
-    L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
+      L.control.scale({options: {position: 'bottomleft',maxWidth: 100,metric: true,imperial: false,updateWhenIdle: false}}).addTo(map);
 
-  </script>
+      var legend = L.control({position: 'topright'});
+
+      legend.onAdd = function (map) {
+
+
+        var div = L.DomUtil.create('div', 'info legend');
+        
+          categories = ['French', 'German', 'native', 'other'];
+                  
+          div.innerHTML = '<h4>Toponymy of Wisconsin</h4>' + '<p>hover to reveal place names</p>';
+
+          for (var i = 0; i < categories.length; i++) {
+              div.innerHTML +=
+                  '<i style="background:' + getColor(categories[i]) + '"></i> ' +
+                  (categories[i] ? '&nbsp;' + categories[i] + '<br>' : '+');
+          }
+
+      return div;
+
+      };
+
+      legend.addTo(map);
+
+    </script>
+  
   </body>
+
 </html>

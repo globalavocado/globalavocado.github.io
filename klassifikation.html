@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Neumark Survey of 1718-19</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--     <link href='https://fonts.googleapis.com/css?family=Asap:400,700italic' rel='stylesheet' type='text/css'> -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/mappage.css" />
+    <link href="css/OLstyle.css" type="text/css">
+
+    <style>
+
+      body {
+   /*     font-family: 'Asap', sans-serif; */ 
+        font-family: 'Open Sans', sans-serif;
+        height: 100%;
+      }
+
+      h2 {
+        font-size: 120%;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid #aaa;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #003a6b;
+        background-color: transparent;
+        margin: 0;
+      }
+
+      .olPopup p { 
+        padding: 5px; 
+        font-size: .7em;
+      }
+      .olPopup h2 { 
+        font-size: 1em; 
+      }
+
+      .olControlAttribution {
+        background-color: #fff;
+      }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>
+    <script src="js/klassifikation.js"></script>
+
+  </head>
+
+  <body onload="init()">
+        <h1>Neumark Survey of 1718-19 (K&ouml;nigsberg District of Prussia)</h1>
+        <h3>historical background of the colonisation</h3>
+        
+        <p>Since the mid-17th Century, the population of Brandenburg had been steadily diminished not only by the Plague but also by various military conflicts, including the Thirty Years War. However, under the reign of Prince-Elector Frederick III (1688-1713, King of Prussia from 1701) Brandenburg's population increased by about a third. Central Europe was an area of frequent territorial gains and losses, thus Frederick had many political and economic reasons to continue the policy of Eastern Colonisation. In 1718, he ordered a survey and unlike other German historical Censuses, this one recorded family names and professions, quite obviously for the purpose of tax collection.</p> 
+  
+        <div id="map"></div>
+
+        <p>The following agricultural personal descriptions are listed in the dataset:</p>
+        <p><i>Bauer</i> = land-owning farmer with several farm buildings - often employs some labourers/maids</p>
+        <p><i>Koss&auml;th</i> = owns cottage & small amount of land - often had to supplement income through day-labouring</p>
+        <p><i>Freih&auml;usler</i> = owns cottage - free to use the premises e.g. to brew beer, works on squire's land and pays tax</p>
+        <p><i>Neub&uuml;ndner</i></p>
+        <p>This only a fraction of the large amount of data processed for this project. German historian Paul Schwartz compiled the original 1718-19 survey into a three-volume publication.</p>
+
+        <h3>sources:</h3>
+        <p>Paul <i>Schwartz</i> (1927): <a href="http://www.wbc.poznan.pl/dlibra/docmetadata?id=121280&from=publication" target="_blank" name="Digital Library of Wielkopolski - Paul Schwartz original source Survey of 1718-19">Die Klassifikation von 1718/19. Ein Beitrag zur Familien- und Wirtschaftsgeschichte der neum&auml;rkischen Landgemeinden</a>. published in: Die Neumark, Verlag des Vereins f&uuml;r Geschichte der Neumark, vol. 4, Verein f&uuml;r Geschichte der Neumark, 211 pages</p>
+        <p>Willi <i>Wojahn</i> (1996): Der Netzedistrikt und die sozial&ouml;konomischen Verh&auml;ltnisse seiner Bev&ouml;lkerung um 1773. published in: Quellen und Darstellungen zur Geschichte Westpreussens, vol. 28, Nicolaus-Copernicus-Verlag, 205 pages</p>
+
+</html>

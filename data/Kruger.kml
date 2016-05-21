@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+
+<Document>
+
+<Folder>
+
+  <Placemark>
+	<name>Bärfelde</name>
+	<description>Michel Krüger, Kossäth</description>
+      <Point><coordinates>14.634654667283984,52.78932329059392</coordinates></Point>
+  </Placemark>
+  
+  <Placemark>
+	<name>Dölzig</name>
+	<description>Jakob Krüger, Kossäth</description>
+      <Point><coordinates>14.377264320623057,52.899211860408663</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Zernickow</name>
+	<description>Chn. Krüger, Kossäth</description>
+      <Point><coordinates>14.758994433744235,52.922923956639465</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Liebenfelde</name>
+	<description>Christian Krüger, Bauer; Peter Krüger, Kossäth</description>
+      <Point><coordinates>14.815860329254482,52.910797004879484</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Dobberphul</name>
+	<description>Daniel Krüger, Kossäth</description>
+      <Point><coordinates>14.721655721316573,52.946817859370697</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Rufen</name>
+	<description>Chistian Krüger; Bauer;</description>
+      <Point><coordinates>14.716015517048172,52.979532137627977</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Butterfelde</name>
+	<description>Sigmund Krüger, Bauer und Kossäth</description>
+      <Point><coordinates>14.387018737378027,52.872342200844372</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Klemzow</name>
+	<description>Hans Krüger, Bauer; Jürgen Krüger, Bauer</description>
+      <Point><coordinates>14.31064408931846,52.873236622393101</coordinates></Point>
+  </Placemark>
+  
+  <Placemark>
+	<name>Güstebiese</name>
+	<description>Christian Krüger, Kossäth</description>
+      <Point><coordinates>14.323570152852716,52.765526846495248</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Zäckerick</name>
+	<description>Karl Krüger, Neubündner</description>
+      <Point><coordinates>14.244419608570428,52.809072619350204</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Wrechow</name>
+	<description>Martin Krüger, Bauer</description>
+      <Point><coordinates>14.288062376582063,52.886934402917625</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Jädickendorf</name>
+	<description>Peter Krüger, Bauer</description>
+      <Point><coordinates>14.428588858080658,52.91093190448327</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Hanseberg</name>
+	<description>Michel Krüger, Kossäth</description>
+      <Point><coordinates>14.329005491274209,52.979591231066927</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Nahausen</name>
+	<description>Hans Krüger, Bauer</description>
+      <Point><coordinates>14.402637816985134,53.012013965081593</coordinates></Point>
+  </Placemark>
+  
+  <Placemark>
+	<name>Batzlow</name>
+	<description>Michel Krüger, Kossäth</description>
+      <Point><coordinates>14.761278484055339,52.685853654960859</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Bernickow</name>
+	<description>Michel Krüger, Kossäth</description>
+      <Point><coordinates>14.46294790225822,52.964735130355471</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Werblitz</name>
+	<description>Christian Krüger, Kossäth</description>
+      <Point><coordinates>14.859460347077556,52.911822347300536</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Karzig</name>
+	<description>Jochen Krüger, Bauer</description>
+      <Point><coordinates>15.116390569530479,52.911589060155215</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Naulin (Pomerania)</name>
+	<description>Michel Krüger, Bauer; Hans Krüger, Kossäth</description>
+      <Point><coordinates>14.890619795249792,53.108298124843969</coordinates></Point>
+  </Placemark>
+
+</Folder>
+</Document>
+</kml>

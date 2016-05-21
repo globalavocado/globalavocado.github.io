@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+<Folder>
+
+  <Placemark>
+	<name>Ringenwalde</name>
+	<description>Hans Schmidt, Bauer</description>
+      <Point><coordinates>14.784695279806501,52.815887467313651</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Warnitz</name>
+	<description>Hans Schmidt, Kossäth; Gottfried Schmid, Kossäth</description>
+      <Point><coordinates>14.671377648166237,52.852249098618763</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Rufen</name>
+	<description>Christian Schmidt, Bauer</description>
+      <Point><coordinates>14.716015517048172,52.979532137627977</coordinates></Point>
+  </Placemark>
+  
+  <Placemark>
+	<name>Zellin</name>
+	<description>Hans Schmidt, Kossäth</description>
+      <Point><coordinates>14.381203540142776,52.736759905687343</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Blessin</name>
+	<description>Christian Schmid, Kossäth</description>
+      <Point><coordinates>14.34359836450224,52.759822495038279</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Zachow</name>
+	<description>Michel Schmidt, Kossäth</description>
+      <Point><coordinates>14.264236990037903,52.911550834159478</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Fürstenfelde</name>
+	<description>Johann Schmidt, Kossäth; Christian Schmidt, Freihäusler</description>
+      <Point><coordinates>14.568395549529479,52.725864047913596</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Zicher</name>
+	<description>Hans Schmidt, Kossäth</description>
+      <Point><coordinates>14.706529917792434,52.691937305148031</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Zehden</name>
+	<description>Michel Schmidt, Spielmann und Mitbürger</description>
+      <Point><coordinates>14.204255034175036,52.878475748935074</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Drewitz</name>
+	<description>Mathes Schmidt, Bauer</description>
+      <Point><coordinates>14.623063458470837,52.612692689329087</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Neumühl</name>
+	<description>Barthel Schmidt, Kossäth</description>
+      <Point><coordinates>14.53921830749001,52.672691408900818</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Werblitz</name>
+		<description>Friedrich Schmidt, Bauer; Christian Schmidt, Kossäth</description>
+      <Point><coordinates>14.859460347077556,52.911822347300536</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Altenkirchen</name>
+	<description>Michel Schmid, Bauer</description>
+      <Point><coordinates>14.295110944554878,52.909796582603391</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Klein-Wubiser</name>
+	<description>Gottfried Schmidt, Bauer</description>
+      <Point><coordinates>14.337290039186133,52.874395713673366</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Mellentin</name>
+	<description>Christian Schmidt, Kossäth</description>
+      <Point><coordinates>14.901412986617279,53.071357411876818</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Mellen (Pomerania)</name>
+	<description>Christian Schmidt, Bauer</description>
+      <Point><coordinates>14.771156943440428,53.091835546177492</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+	<name>Neuenburg</name>
+	<description>Jürgen Schmidt, Kossäth; Melcher Schmidt, Kossäth</description>
+      <Point><coordinates>15.027930075492614,52.910918201901495</coordinates></Point>
+  </Placemark>
+
+</Folder>
+</Document>
+
+</kml>

@@ -1,71 +1,71 @@
 var map, select;
 
 function init(){
-    var options = {
-        projection: new OpenLayers.Projection("EPSG:900913"),
-        displayProjection: new OpenLayers.Projection("EPSG:4326")
-    };
-    map = new OpenLayers.Map('map', options);
-    
-    var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
-    
-    var brandenburg = new OpenLayers.Layer.Vector("Brandenburg borders", {
-   projection: map.displayProjection,                
+  var options = {
+      projection: new OpenLayers.Projection("EPSG:900913"),
+      displayProjection: new OpenLayers.Projection("EPSG:4326")
+  };
+      map = new OpenLayers.Map('map', options);
+  
+  var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
+  
+  var brandenburg = new OpenLayers.Layer.Vector("Brandenburg borders", {
+        projection: map.displayProjection,                
         strategies: [new OpenLayers.Strategy.Fixed()],
         protocol: new OpenLayers.Protocol.HTTP({
-            url: "./data/Brandenburg.kml",
-            format: new OpenLayers.Format.KML({
-                extractStyles: true,
-                extractAttributes: true,
-                maxDepth: 2
-            })
-        })
-    });
+          url: "./data/Brandenburg.kml",
+          format: new OpenLayers.Format.KML({
+              extractStyles: true,
+              extractAttributes: true,
+              maxDepth: 2
+          })
+      })
+  });
     
-var krugerstyles = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
-{fillColor: "orange", fillOpacity: 1, strokeColor: "black", pointRadius: 4},
-OpenLayers.Feature.Vector.style["default"]));
+  var krugerstyles = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
+  {fillColor: "orange", fillOpacity: 1, strokeColor: "black", pointRadius: 4},
+  OpenLayers.Feature.Vector.style["default"]));
 
-var schmidtstyles = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
-{fillColor: "red", fillOpacity: 1, strokeColor: "black", pointRadius: 4},
-OpenLayers.Feature.Vector.style["default"]));
+  var schmidtstyles = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
+  {fillColor: "red", fillOpacity: 1, strokeColor: "black", pointRadius: 4},
+  OpenLayers.Feature.Vector.style["default"]));
     
-   var kruger = new OpenLayers.Layer.Vector("Kr&uuml;ger variants", {
+  var kruger = new OpenLayers.Layer.Vector("Kr&uuml;ger variants", {
       styleMap : krugerstyles,
-       projection: map.displayProjection,
-       strategies: [new OpenLayers.Strategy.Fixed()],
-       protocol: new OpenLayers.Protocol.HTTP({
-           url: "./data/Kruger.kml",
-           format: new OpenLayers.Format.KML({
-        extractStyles: false,                       
-               extractAttributes: true
+      projection: map.displayProjection,
+      strategies: [new OpenLayers.Strategy.Fixed()],
+      protocol: new OpenLayers.Protocol.HTTP({
+          url: "./data/Kruger.kml",
+          format: new OpenLayers.Format.KML({
+            extractStyles: false,                       
+            extractAttributes: true
            })
        })
-    });
+  });
 
- var schmidt = new OpenLayers.Layer.Vector("Schmidt variants", {
+  var schmidt = new OpenLayers.Layer.Vector("Schmidt variants", {
       styleMap : schmidtstyles,
-       projection: map.displayProjection,
-       strategies: [new OpenLayers.Strategy.Fixed()],
-       protocol: new OpenLayers.Protocol.HTTP({
-           url: "./data/Schmidt.kml",
-           format: new OpenLayers.Format.KML({
-        extractStyles: false,                       
-               extractAttributes: true
-           })
+      projection: map.displayProjection,
+      strategies: [new OpenLayers.Strategy.Fixed()],
+      protocol: new OpenLayers.Protocol.HTTP({
+          url: "./data/Schmidt.kml",
+          format: new OpenLayers.Format.KML({
+            extractStyles: false,                       
+            extractAttributes: true
+          })
        })
-    });
+  });
     
     map.addLayers([mapnik, brandenburg, kruger, schmidt]);
 
     select = new OpenLayers.Control.SelectFeature([kruger, schmidt]);
    
-  kruger.events.on({
+    kruger.events.on({
         "featureselected": onFeatureSelect,
         "featureunselected": onFeatureUnselect
     });
     
-schmidt.events.on({
+    schmidt.events.on({
         "featureselected": onFeatureSelect,
         "featureunselected": onFeatureUnselect
     });            
@@ -81,9 +81,11 @@ schmidt.events.on({
         ).transform(map.displayProjection, map.projection)
     );
 }
+
 function onPopupClose(evt) {
     select.unselectAll();
 }
+
 function onFeatureSelect(event) {
     var feature = event.feature;
     var selectedFeature = feature;
@@ -96,6 +98,7 @@ function onFeatureSelect(event) {
     feature.popup = popup;
     map.addPopup(popup);
 }
+
 function onFeatureUnselect(event) {
     var feature = event.feature;
     if(feature.popup) {

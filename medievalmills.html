@@ -1,0 +1,273 @@
+  
+<html>
+  <head>
+
+    <title>Winchester's Medieval Water Economy</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/mappage.css" />
+
+    <style>
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        height: 100%;
+      }
+
+      h1, h5 {
+        padding-bottom: 5px;
+      }
+
+      h2 {
+        font-size: 120%;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid #aaa;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #003a6b;
+        background-color: transparent;
+        margin: 0;
+      }
+
+      #map {
+        border: 1px solid black;
+        width: 100%;
+      }
+
+    </style>
+
+  </head>
+   <body onload="initmapbuilder()">
+
+      <h1>Winchester's Medieval Water Economy</h1>
+
+      <h2>Mills</h2> 
+
+      <p>Below is a visualisation of Winchester's Water Mills until approximately 1530, as covered by Biddle's and Keene's works. Where mills are numbered, this is done as outlined Keene's 'Survey of Medieval Winchester'. One of his maps shows annual profits received by the bishop. For 1262-63 this is highest at Durngate, Floodstock and Prior's Barton Mills, each yielding &pound;10 annually.</p>
+
+      <h2>Water Meadows</h2> 
+
+      <p>The Hyde Meadows formed part of a natural flood plain to the north of Winchester. By 1300 there was a little farm near what is now Abbotts Barton, where monks from the Hyde Abbey were farming. Due to frequent flooding, land use would have been mainly cattle grazing, fruit orchards and some fishing. This area now forms part of Winnall Moors Wildlife Reserve. The meadows became most important in the 18th Century, when a water meadow system was constructed.</p>
+
+      <p>This interactive map was created using the Ordnance Survey's OpenSpace. Some ground photos are on <a href="http://picasaweb.google.com/globalavocado/" target="_blank">my Picasa page</a>, see below for further reading.</p>
+
+    <!-- OpenSpace API -->
+    <script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=99950B8BBA0743A5E0405F0ACA6077F1"></script>
+    
+    <!-- this API key only works with globalavocado.github.com -->
+    
+    <script type= "text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/basicmap.js"></script>
+    <script type= "text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/searchbox.js"></script>
+    <script type="text/javascript">
+    //declare marker variables
+    var pos, size, offset, infoWindowAnchor, icon, content, popUpSize;
+
+    function initmapbuilder()
+    {
+    //initiate the map
+    var options = {resolutions: [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 4, 2.5, 2, 1]};
+    osMap = new OpenSpace.Map('map', options);
+
+    //configure map options (basicmap.js)
+    setglobaloptions();
+    //set the center of the map and the zoom level
+    osMap.setCenter(new OpenSpace.MapPoint(449166.5,128669),7);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448628,129685);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  2 - <strong>Durngate Mill</strong> (972): Saxon mill since 961, recorded in Pipe Rolls 1208, grinding mill in use until 1946 (BCT, part IV)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448542,129548);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  3 - old <strong>Coytebury Mills</strong> (497 / 502): two corn mills, may have ceased to operate by 1215 (Keene, 828pp)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448505,129534);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  3 - new <strong>Coytebury&nbsp;Mill</strong> (north of 486): granted 1215, possibly ceased by 1417 (Keene, p.799)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448571,129673);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  2 - part of <strong>Durngate</strong> - <span>fulling</span> mill on the site of the Willow Tree pub (<span>BCT</span>, IV), since at least 1500.</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448359,129378);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  4 - <strong>Newbridge Mill</strong> (next to 571): new fulling mill completed 1402, by 1472 continuous problems due to lack of water (Keene, 828pp.)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448309,129238);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  <strong>Cathedral Priory Mill</strong>: at the east end of the cathedral at least 1262-1530 (Keene, 60pp.)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448307,129270);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  8 - <strong>Postern Mill</strong> (555-6): Mill of the Prioress of Wintney, on the Colebrook stream, operational abt. 1190 - 1604 (BCT II)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448429,129232);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  6 - <strong>St Mary&#39;s Abbey Mill</strong> (above 543): before 1155 (BCT II) until after the Dissolution of Monasteries abt. 1550 (Keene, p.61)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448603,129319);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  6 - <strong>Eastgate Mill</strong> (944): Abbess of Wherwell rebuilt Saxon mill bef. 1086, derelict 1417, rebuilt 1743, saved from demolition by National Trust 1928 (BCT I), now known as <strong>City Mill</strong></p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448314,129018);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  9 - <strong>Floodstock Mill</strong> (811): existed since at least 1208, rebuilt 1302, 1324 two new mills, then only part year operation, ceased after 1345 (Keene, p.981)</p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448547,128954);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  10 -&nbsp;<strong>Segrim&#39;s Mill</strong> (1061): operational since bef. 1208, (Keene, p.1084), 1474 four corn mills, later fulling, 1751 storage expansion (BCT III), known as <strong>Wharf Mill</strong> since 1877. Now block of flats, partially using hydropower to generate electricity.</p>';
+    popUpSize = new OpenLayers.Size(250,250);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448268,128863);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  11 - <strong>Tawing Mill</strong> (844): site not exactly known, Biddle records it further downstream. Operational at least 1249-1330. Keene states that mill is unlikely to have ever been used for tawing, the treatment of leather with alum and other compounds (p.995).</p>';
+    popUpSize = new OpenLayers.Size(250,250);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448192,130046);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  1 - <strong>Hyde Abbey Mill</strong>: operational since at&nbsp; least 1114 (BCT, IV) until at least 1417 (Keene, p. 944)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(447942,128284);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  12 - <strong>Prior&#39;s Barton Mill</strong> (1057): since at least 1208 until derelict in 1488 (Keene p.1082), &quot;Suthmyll&quot; 16th Century (p.1430), operational until 19th Century</p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(447675,127277.5);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  14 - <strong>Drayton Mill</strong> (later St Cross): in operation from about 1208 until the 19th Century. (59pp.)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(447806,128005.5);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  13 - <strong>Sparkford Mill</strong>: Sparkford was the old name for the village of St. Cross. Keene places the mill at the end of Cri(s)pstead Lane (<span>p.59</span>).</p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448632.5,129112);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-green.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  probable site of a mill (Biddle, fig.8)</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448528,129303);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-green.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  5 - This mill is reported by <span>Biddle</span> (fig. 8) as the second mill belonging to St Mary&#39;s Abbey. Keene does not mention it in his Survey of Winchester (1985).</p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448210,128696.5);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-blue.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  13 - <strong><span>Crepestre</span> Mill</strong> - since before 1208, no longer operational by 1300 (59pp.). Keene places it slightly south of &#39;Mullelane&#39; (near Romans&#39; Road) (fig. 120)</p>';
+    popUpSize = new OpenLayers.Size(250,180);
+    osMap.createMarker(pos, icon, content, popUpSize);
+    // add a marker
+    pos = new OpenSpace.MapPoint(448061.5,127309);
+    size = new OpenLayers.Size(17,17);
+    offset = new OpenLayers.Pixel(-8,-8);
+    infoWindowAnchor = new OpenLayers.Pixel(8,8);
+    icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/OS/images/markers/round-marker-lrg-red.png', size, offset, null, infoWindowAnchor);
+    content = '<p>  <strong>St Catherine&#39;s Sawmill </strong>and <a href=\"http://www.hwt.org.uk/data/files/Itchen_Nav/st_catherines_lock.pdf\" onclick=\"var win=window.open(\'http://www.hwt.org.uk/data/files/Itchen_Nav/st_catherines_lock.pdf\');win.focus();return false;\" onclick=\"var win=window.open(\'http://www.hwt.org.uk/data/files/Itchen_Nav/st_catherines_lock.pdf\');win.focus();return false;\">St Catherine&#39;s Lock</a> (opens pdf), (Warren&#39;s Guide and Hampshire Wildlife Trust)&nbsp;</p>';
+    popUpSize = new OpenLayers.Size(250,150);
+    osMap.createMarker(pos, icon, content, popUpSize);
+
+    clusterControl = new OpenSpace.Control.ClusterManager();
+    osMap.addControl(clusterControl);
+    clusterControl.activate();}
+    </script>
+
+    <div id="map"></div>
+  
+    <h2>sources:</h2>
+      <p>Martin <i>Biddle</i> (ed.) (1976): <a href="http://winchesterstudies.org.uk/volumes/ws-1-winchester-in-the-early-middle-ages/" target="_blank"> Winchester in the Early Middle Ages</a>, especially Fig. 8 (Watermills, markets and St. Giles's Fair).</p>
+      <p>BCT = Barbara <i>Carpenter Turner</i> (1963): Mills of Medieval Winchester, parts I-IV; article series in the Hampshire Chronicle.</p>
+      <p>Derek <i>Keene</i>, with Alexander <i>Rumble</i> (1985): <a href="http://winchesterstudies.org.uk/volumes/ws-2-survey-of-medieval-winchester/" target="_blank">Survey of Medieval Winchester</a>, especially Fig. 2 for map of annual profits.</p>
+  </body>
+</html>
+  

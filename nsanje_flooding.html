@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+  <head> 
+      <title>Nsanje flooding 2015</title>
+      
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css" />
+      <link rel="stylesheet" href="css/label.css" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="./css/mappage.css">
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  
+  <style>
+
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      html, body, #map {
+        height: 95%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      th {
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .info {
+        padding: 6px 8px;
+        font: 14px/16px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        width: 300px;
+      }
+
+      .info h2 {
+        margin: 0 0 5px;
+        color: #777;
+      }
+      
+      .leaflet-container {
+        background: #FFF;
+        font-weight: normal;
+      }
+
+  </style>
+
+  </head>
+
+<body>
+  <a href="index.html" class="btn btn-info">back to home page</a><h1>Nsanje District Flooding</h1>
+    <div id="map"></div>
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/0.26.0/Autolinker.min.js"></script>
+    <script src="js/label.js"></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    
+    <script src='data/Malawi/nsanjedistrict.js' ></script>
+    <script src='data/Malawi/nsanjeosmroadsreprojected.js' ></script>
+    <script src='data/Malawi/marsheslateJanuary2015.js' ></script>
+    <script src='data/Malawi/floodinglateJanuary2015.js' ></script>
+    <script src='data/Malawi/schoolcatchmentarea5km.js' ></script>
+    <script src='data/Malawi/schoolcatchmentarea3km.js' ></script>
+    <script src='data/Malawi/nsanjegeonames.js' ></script>
+    <script src='data/Malawi/villagesNSO1998.js' ></script>
+    <script src='data/Malawi/floodreliefschools.js' ></script>
+    <script src='data/Malawi/secondaryschools.js' ></script>
+              
+    <script src="js/nsanje_flooding.js"></script>
+</body>
+</html>
+    

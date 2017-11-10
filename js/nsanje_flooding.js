@@ -3,7 +3,7 @@ var map = L.map('map', {
     }).fitBounds([[-17.00295,34.87267],[-16.54275,35.49477]]);
 // 34.87267,-16.54275,35.49477,-17.00295
 
-        var additional_attrib = 'data kindly provided by OSM and <a href="http://www.worldbank.org/en/country/malawi" target ="_blank">World Bank</a>/<a href="http://www.lands.gov.mw/index.php/departments/surveys.html" target ="_blank">Malawi Department of Surveys</a><br>';
+        var additional_attrib = 'data kindly provided by <a href="http://www.worldbank.org/en/country/malawi" target ="_blank">World Bank</a>, <a href="http://www.lands.gov.mw/index.php/departments/surveys.html" target ="_blank">Malawi Department of Surveys</a> and OSM.<br>';
     
     var feature_group = new L.featureGroup([]);
 
@@ -250,21 +250,7 @@ function pop_secondaryschools(feature, layer) {
             
                     cluster_groupnsanjegeonamesJSON.addLayer(nsanjegeonamesJSON);
                     cluster_groupnsanjegeonamesJSON.addTo(map);
-
-        var title = new L.Control();
-        
-        title.onAdd = function (map) {
-            this._div = L.DomUtil.create('div', 'info');
-            this.update();
-            return this._div;
-        };
        
-        title.update = function () {
-            this._div.innerHTML = 'Flooding in southern Malawi, January 2015. Showing location of wetland (marshes) as well as access to secondary and Flood Relief schools. The school catchment areas are based on the feasibility of students making a daily round trip on foot. Due to inaccuracies and partial overlap, two datasets of villages were included. Click any feature to reaveal more information.'
-        };
-        
-        title.addTo(map);
-
         var baseMaps = {
             'OSM HOT': basemap_OSM,
             'OpenTopoMap': basemap_openTopo};
@@ -279,7 +265,7 @@ function pop_secondaryschools(feature, layer) {
             "Villages (NSO 1998)": cluster_groupvillagesNSO1998JSON,
             "Flood Relief Schools": cluster_groupfloodreliefschoolsJSON,
             "Secondary Schools": cluster_groupsecondaryschoolsJSON,
-        },{collapsed:false}).addTo(map);
+        },{collapsed:true}).addTo(map);
 
         L.control.scale({options: {
             position: 'bottomleft',
@@ -288,3 +274,5 @@ function pop_secondaryschools(feature, layer) {
             imperial: false,
             updateWhenIdle: false
         }}).addTo(map);
+
+        map.scrollWheelZoom.disable();

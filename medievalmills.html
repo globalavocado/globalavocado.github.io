@@ -7,6 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/mappage.css" />
 
@@ -28,6 +29,7 @@
       }
 
       h1, h2, h3, h4, h5, h6 {
+        padding-top: 0.5em;
         color: #003a6b;
         background-color: transparent;
         margin: 0;
@@ -42,19 +44,22 @@
 
   </head>
    <body onload="initmapbuilder()">
+      
+      <div class="container-fluid">
+        <a href="index.html" class="btn btn-info">home page</a>
 
-      <h1>Winchester's Medieval Water Economy</h1>
+        <h1>Winchester's Medieval Water Economy</h1>
 
-      <h2>Mills</h2> 
+        <h2>Mills</h2> 
 
-      <p>Below is a visualisation of Winchester's Water Mills until approximately 1530, as covered by Biddle's and Keene's works. Where mills are numbered, this is done as outlined Keene's 'Survey of Medieval Winchester'. One of his maps shows annual profits received by the bishop. For 1262-63 this is highest at Durngate, Floodstock and Prior's Barton Mills, each yielding &pound;10 annually.</p>
+        <p>Below is a visualisation of Winchester's Water Mills until approximately 1530, as covered by Biddle's and Keene's works. Where mills are numbered, this is done as outlined Keene's 'Survey of Medieval Winchester'. One of his maps shows annual profits received by the bishop. For 1262-63 this is highest at Durngate, Floodstock and Prior's Barton Mills, each yielding &pound;10 annually.</p>
 
-      <h2>Water Meadows</h2> 
+        <h2>Water Meadows</h2> 
 
-      <p>The Hyde Meadows formed part of a natural flood plain to the north of Winchester. By 1300 there was a little farm near what is now Abbotts Barton, where monks from the Hyde Abbey were farming. Due to frequent flooding, land use would have been mainly cattle grazing, fruit orchards and some fishing. This area now forms part of Winnall Moors Wildlife Reserve. The meadows became most important in the 18th Century, when a water meadow system was constructed.</p>
-      <p>Pan the map up to see the two remaining mill locations in the Water Meadows, south-east of King's Worthy.</p>
+        <p>The Hyde Meadows formed part of a natural flood plain to the north of Winchester. By 1300 there was a little farm near what is now Abbotts Barton, where monks from the Hyde Abbey were farming. Due to frequent flooding, land use would have been mainly cattle grazing, fruit orchards and some fishing. This area now forms part of Winnall Moors Wildlife Reserve. The meadows became most important in the 18th Century, when a water meadow system was constructed.</p>
+        <p>Pan the map up to see the two remaining mill locations in the Water Meadows, south-east of King's Worthy.</p>
 
-      <p>Some ground photos are on <a href="http://picasaweb.google.com/globalavocado/" target="_blank">my Picasa page</a>, see below for further reading.</p>
+        <p>Some ground photos are on <a href="https://get.google.com/albumarchive/104162734932481290534/album/AF1QipMNsmGXUY_tPFk-Q2kvZMdW0wUdvFfgw16ZU3fl" target="_blank">my Picasa page</a>, see below for further reading.</p>
 
     <!-- OpenSpace API -->
     <script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=99950B8BBA0743A5E0405F0ACA6077F1"></script>
@@ -303,13 +308,16 @@
     clusterControl.activate();}
     </script>
 
-    <h5>visualisation &copy; 2010</h5>
-    <div id="map"></div>
-  
-    <h2>sources:</h2>
-      <p>Martin <i>Biddle</i> (ed.) (1976): <a href="http://winchesterstudies.org.uk/volumes/ws-1-winchester-in-the-early-middle-ages/" target="_blank"> Winchester in the Early Middle Ages</a>, especially Fig. 8 (Watermills, markets and St. Giles's Fair).</p>
-      <p>BCT = Barbara <i>Carpenter Turner</i> (1963): Mills of Medieval Winchester, parts I-IV; article series in the Hampshire Chronicle.</p>
-      <p>Derek <i>Keene</i>, with Alexander <i>Rumble</i> (1985): <a href="http://winchesterstudies.org.uk/volumes/ws-2-survey-of-medieval-winchester/" target="_blank">Survey of Medieval Winchester</a>, especially Fig. 2 for map of annual profits.</p>
+        <h5>visualisation &copy; 2010</h5>
+
+        <div id="map"></div>
+    
+        <h2>sources:</h2>
+        <p>Martin <i>Biddle</i> (ed.) (1976): <a href="http://winchesterstudies.org.uk/volumes/ws-1-winchester-in-the-early-middle-ages/" target="_blank"> Winchester in the Early Middle Ages</a>, especially Fig. 8 (Watermills, markets and St. Giles's Fair).</p>
+        <p>BCT = Barbara <i>Carpenter Turner</i> (1963): Mills of Medieval Winchester, parts I-IV; article series in the Hampshire Chronicle.</p>
+        <p>Derek <i>Keene</i>, with Alexander <i>Rumble</i> (1985): <a href="http://winchesterstudies.org.uk/volumes/ws-2-survey-of-medieval-winchester/" target="_blank">Survey of Medieval Winchester</a>, especially Fig. 2 for map of annual profits.</p>
+
+      </div>
   </body>
 </html>
   

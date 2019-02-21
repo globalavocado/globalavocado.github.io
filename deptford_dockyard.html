@@ -3,9 +3,9 @@
 <meta charset='utf-8' />
     <title>Deptford Dockyard 1698</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <link href='https://fonts.googleapis.com/css?family=IM+Fell+French+Canon' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mappage.css" />
@@ -31,12 +31,12 @@
 
     </style>
 
-    <script type="text/javascript" src="./data/landuse.geojson"></script>
-    <script type="text/javascript" src="./data/water.geojson"></script>
-    <script type="text/javascript" src="./data/dockyard1698.geojson"></script>
-    <script type="text/javascript" src="./data/walls.geojson"></script>
-    <script type="text/javascript" src="./data/gardens.geojson"></script>
-    <script type="text/javascript" src="./data/wetdocks.geojson"></script>
+    <script type="text/javascript" src="/data/landuse.geojson"></script>
+    <script type="text/javascript" src="/data/water.geojson"></script>
+    <script type="text/javascript" src="/data/dockyard1698.geojson"></script>
+    <script type="text/javascript" src="/data/walls.geojson"></script>
+    <script type="text/javascript" src="/data/gardens.geojson"></script>
+    <script type="text/javascript" src="/data/wetdocks.geojson"></script>
 
   </head>
     <body>
@@ -68,11 +68,14 @@
 
 
         <script>
-                // set up map
+               
+    // set up map
+      
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZ2xvYmFsYXZvY2FkbyIsImEiOiJjanNlZm4xcTAwNHZ2M3pvMjF6ZjYwMjd5In0.3HHyw-sJqggrZDAQhLE1QQ';
 
         var map = new mapboxgl.Map({
           container: 'map',
-          style: 'https://openmaptiles.github.io/positron-gl-style/style-cdn.json',
+          style: 'mapbox://styles/globalavocado/cjsefucc309ie1fn8l6vld3mv',
           center: [-0.028, 51.486],
           zoom: 15
             });

@@ -1,6 +1,7 @@
 var map = L.map('map', { 
     zoomControl:true 
-    }).fitBounds([[-17.00295,34.87267],[-16.54275,35.49477]]);
+    }).fitBounds([[-17.1513,34.5190],[-16.3076,36.0365]]);
+// [-17.00295,34.87267],[-16.54275,35.49477]
 // 34.87267,-16.54275,35.49477,-17.00295
 
         var additional_attrib = 'data kindly provided by <a href="http://www.worldbank.org/en/country/malawi" target ="_blank">World Bank</a>, <a href="http://www.lands.gov.mw/index.php/departments/surveys.html" target ="_blank">Malawi Department of Surveys</a> and OSM.<br>';
@@ -12,9 +13,11 @@ var map = L.map('map', {
         var basemap_OSM = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', { 
             attribution: additional_attrib + '&copy; <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'}); 
         basemap_OSM.addTo(map);
-        
-        var basemap_openTopo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            attribution: additional_attrib + 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org" target="_blank">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org" target="_blank">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC-BY-SA</a>)'});
+
+        var basemap_Hydda = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
 
     var layerOrder=new Array();
 
@@ -172,7 +175,7 @@ function pop_secondaryschools(feature, layer) {
                             weight: 1,
                             opacity: feature.properties.transp,
                             fillOpacity: feature.properties.transp
-                            }).bindLabel(feature.properties.School_Nam)
+                            }).bindTooltip(feature.properties.School_Nam)
                         }
                     });
                     feature_group.addLayer(secondaryschoolsJSON);
@@ -195,7 +198,7 @@ function pop_secondaryschools(feature, layer) {
                             weight: 1,
                             opacity: feature.properties.transp,
                             fillOpacity: feature.properties.transp
-                            }).bindLabel(feature.properties.SCHOOL_NAM)
+                            }).bindTooltip(feature.properties.SCHOOL_NAM)
                         }
                     });
                     feature_group.addLayer(floodreliefschoolsJSON);
@@ -218,7 +221,7 @@ function pop_secondaryschools(feature, layer) {
                             weight: 1,
                             opacity: feature.properties.transp,
                             fillOpacity: feature.properties.transp
-                            }).bindLabel(feature.properties.NAME)
+                            }).bindTooltip(feature.properties.NAME)
                         }
                     });
                     feature_group.addLayer(villagesNSO1998JSON);
@@ -241,7 +244,7 @@ function pop_secondaryschools(feature, layer) {
                             weight: 1,
                             opacity: feature.properties.transp,
                             fillOpacity: feature.properties.transp
-                            }).bindLabel(feature.properties.asciiname)
+                            }).bindTooltip(feature.properties.asciiname)
                         }
                     });
                     feature_group.addLayer(nsanjegeonamesJSON);
@@ -253,7 +256,7 @@ function pop_secondaryschools(feature, layer) {
        
         var baseMaps = {
             'OSM HOT': basemap_OSM,
-            'OpenTopoMap': basemap_openTopo};
+            'HyddaMap': basemap_Hydda};
         L.control.layers(baseMaps,{
             "Nsanje District": nsanjedistrictJSON,
             "Marshes (late January 2015)": marsheslateJanuary2015JSON,

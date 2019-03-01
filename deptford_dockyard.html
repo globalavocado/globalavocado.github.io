@@ -1,13 +1,13 @@
 <html>
   <head>
-<meta charset='utf-8' />
+    <meta charset='utf-8' />
     <title>Deptford Dockyard 1698</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <link href='https://fonts.googleapis.com/css?family=IM+Fell+French+Canon' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mappage.css" />
 
     <style>
@@ -17,7 +17,7 @@
           height: 100%;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2 {
           color: #003a6b;
           background-color: transparent;
           margin: 1em 0 1em;
@@ -43,7 +43,7 @@
       <div class="container-fluid">
           
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-sm">
               <a href="index.html" class="btn btn-info">home page</a>
               
               <div class='map-description'>
@@ -55,14 +55,23 @@
                   <p>This map shows an overlay of the historic Deptford Dockyard, displaying docks, buildings, gardens, canals and extensive walls in their present-day location. The original manuscripts were compiled under the guidance of Edmund Dummer, head surveyor of the Navy and contain a wealth of information referring to building materials and other architectural information, as well as a detailed map. <sup><a href="http://www.bl.uk/onlinegallery/onlineex/deptford/v/008kin000000043u00065vr0.html" target="_blank">source</a></sup></p>
                   <p>The data was digitised from scans of the 1698 folios, outlining improvements made over the previous 10 years. Descriptions and numbering of the map items has been preserved according to the Dummer documents. Noteworthy is also the shoreline of the River Thames, which has visibly receded since the 17<sup>th</sup> Century.</p>
               </div>
+
             </div>
 
+          </div>
+
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-            <div id="map">            
-            </div>
+              <div class="col-sm">            
+                <div id="map"></div>
+              </div>
           </div>
+
+          <div class="row">
+              <div class="col-sm">            
+                <div id="map"></div>
+              </div>
           </div>
+
 
       </div>
 

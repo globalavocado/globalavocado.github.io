@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mappage.css" />
 
     <style>
@@ -26,6 +26,7 @@
         h1, h2, h3, h4, h5, h6 {
           color: #003a6b;
           background-color: transparent;
+          margin: 1em 0 1em;
         }
 
     </style>
@@ -33,25 +34,32 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-
-          <a href="index.html" class="btn btn-info">home page</a>
-
-          <h1>Healthcare Infrastructure in Eastern Cape Province (South Africa)</h1>
-            <h2>hospitals, clinics, power supply and healthcare districts</h2>
-
-            <p>This Open Data map was commissioned by <a href="http://www.konektaz.info" target="_blank">Konektaz</a> and was made using Open Data. Feature data also includes power lines and was downloaded from the website of the Eastern Cape Provincial Spatial Development Plan. Boundaries were made available on the Municipal Demarcation Board website. The map was created using TileMill and styled with CartoCSS. Hovering over a health district brings up its name in the top right hand corner, clinic names appear as you zoom in.</p>
-            
-            <iframe width='100%' height='500px' frameborder='0' src='http://a.tiles.mapbox.com/v3/globalavocado.Konektaz/page.html#7/-31.952/26.768'></iframe>
-            <p>Healthcare in Eastern Cape, made with TileMill and hosted on MapBox. &copy; 2013</p>
-           
-            <h2>sources:</h2>
-            <ul> 
-              <li>Eastern Cape Provincial Spatial Development Plan (website disabled), <a href="http://www.ecprov.gov.za/Pages/default.aspx" target="_blank">Province of Eastern Cape</a></li>
+      <div class="container-fluid">
+          
+          <div class="row">
+            <div class="col-sm">
+              <a href="index.html" class="btn btn-info">home page</a>
               
-              <li><a href="http://www.demarcation.org.za/" target="_blank">Municipal Demarcation Board of South Africa</a></li>
-            </ul>
-            
+              <div class='map-description'>
+
+                <h1>Healthcare Infrastructure in Eastern Cape Province (South Africa)</h1>
+                <h2>hospitals, clinics, power supply and healthcare districts</h2>
+
+                <p>This Open Data map was commissioned by <a href="http://www.healthsites.io" target="_blank">Konektaz</a> (now Healthsites.io) and was made using Open Data. Feature data also includes power lines and was downloaded from the website of the Eastern Cape Provincial Spatial Development Plan. Boundaries were made available on the Municipal Demarcation Board website. The map was created using TileMill and styled with CartoCSS. Hovering over a health district brings up its name in the top right hand corner, clinic names appear as you zoom in.</p>
+              
+                <iframe width='80%' height='500px' frameborder='0' src='http://a.tiles.mapbox.com/v3/globalavocado.Konektaz/page.html#7/-31.952/26.768'></iframe>
+                <p>Healthcare in Eastern Cape, made with TileMill and hosted on MapBox. &copy; 2013</p>
+             
+                <h2>sources:</h2>
+                <ul> 
+                  <li>Eastern Cape Provincial Spatial Development Plan (website disabled), <a href="http://www.ecprov.gov.za/Pages/default.aspx" target="_blank">Province of Eastern Cape</a></li> 
+                  <li><a href="http://www.demarcation.org.za/" target="_blank">Municipal Demarcation Board of South Africa</a></li>
+                </ul>
+
+            </div>
+
+          </div>
+        </div>    
     </div>
 
   </body>

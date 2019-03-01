@@ -4,16 +4,28 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
     <link href='https://fonts.googleapis.com/css?family=IM+Fell+French+Canon' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/mappage.css" />
-    <link rel="stylesheet" href="css/label.css" />
 
     <style>
 
         body {
           font-family: 'IM Fell French Canon', serif;
+        }
+
+       h1, h2 {
+          background-color: transparent;
+          margin: 1em 0 1em;
+        }
+
+       h2 {
+          font-size: 120%;
+          margin-bottom: 0.5em;
+          border-bottom: 1px solid #aaa;
         }
 
         img {
@@ -23,26 +35,32 @@
 
     </style>
     
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script src="js/label.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/0.26.0/Autolinker.min.js"></script>
 
   </head>
 
   <body>
     <div class="container-fluid">
-      <a href="index.html" class="btn btn-info">home page</a>
-      
-      <h1><img src="./images/fabrique-au-quebec-hi.png">Toponymie française, allemande et autochtone dans le Wisconsin</h1>
-      
-      <h3>French, German and Native American place names in Wisconsin</h3>
+          
+      <div class="row">
+      <div class="col-sm">
+        <a href="index.html" class="btn btn-info">home page</a>
 
-      <p>Until the end of the 19th Century, Wisconsin experienced three great waves of immigration. The first Native Americans to settle were the Oneida, around the year 1000. Toponymy indicates that these were later joined by Menominee, Ojibwe, Potawatomi and others, from around 1500. <sup><a href="https://books.google.co.uk/books?id=P1fzAAAAMAAJ" target="_blank">source</a></sup> The French arrived from the 17th Century onwards, with New France covering large parts of North America by 1750. The third wave of colonisation brought mainly immigrants from German-speaking countries, Benelux and Scandinavia. By 1885, more than half of Wisconsin's annual immigrant contingent was German-born.<sup><a href="http://www.jstor.org/stable/199945" target="_blank">source</a></sup></p>
+        <h1><img src="./images/fabrique-au-quebec-hi.png">Toponymie française, allemande et autochtone dans le Wisconsin</h1>
+        
+        <h3>French, German and Native American place names in Wisconsin</h3>
 
-      <div id="map"></div>
-  
-  </div>
+        <p>Until the end of the 19th Century, Wisconsin experienced three great waves of immigration. The first Native Americans to settle were the Oneida, around the year 1000. Toponymy indicates that these were later joined by Menominee, Ojibwe, Potawatomi and others, from around 1500. <sup><a href="https://books.google.co.uk/books?id=P1fzAAAAMAAJ" target="_blank">source</a></sup> The French arrived from the 17th Century onwards, with New France covering large parts of North America by 1750. The third wave of colonisation brought mainly immigrants from German-speaking countries, Benelux and Scandinavia. By 1885, more than half of Wisconsin's annual immigrant contingent was German-born.<sup><a href="http://www.jstor.org/stable/199945" target="_blank">source</a></sup></p>
+
+        <div id="map"></div>
+
+        </div>
+      </div>
+    </div>
     
 
     <script type="text/javascript" src="./data/us-states.js"></script>
@@ -87,7 +105,7 @@
 
       function onEachFeatureToponymy(feature, layer) {
         labelname = feature.properties.toponymy
-        layer.bindLabel(feature.properties.name)
+        layer.bindTooltip(feature.properties.name)
       }
 
       function placesstyle(feature) {

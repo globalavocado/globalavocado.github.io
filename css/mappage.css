@@ -1,9 +1,22 @@
 .container-fluid {
-	padding: 1.2em;
+  padding: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #003a6b;
+  background-color: transparent;
+  margin: 1em 0 1em;
+}
+
+h2 {
+  font-size: 120%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #aaa;
 }
 
 #text{
   width: 30%;
+  size: 80%;
   padding-right: 10px;
 }
 
@@ -12,31 +25,35 @@
 }
 
 .info {
-	padding: 6px 8px;
-	background: white;
-	background: rgba(255,255,255,0.8);
-	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	border-radius: 5px;
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .info h4 {
-	margin: 0 0 5px;
-	color: #777;
+  margin: 0 0 5px;
+  color: #777;
 }
 
 .legend {
-	line-height: 18px;
-	color: #555;
+  line-height: 18px;
+  color: #555;
 }
 
 .legend i {
-	width: 18px;
-	height: 18px;
-	float: left;
-	margin-right: 8px;
-	opacity: 0.7;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
 }
 
 .screenshot {
-	width: 60%;
+  width: 50%;
+}
+
+.leaflet-tile, .leaflet-tile-loaded {
+  padding: 0;
 }

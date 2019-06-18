@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title ng-bind="'caffetterieeeee - ' + coffee.response.geocode.where"></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/leaflet.label.css" />
+	<link rel="stylesheet" href="css/coffeestyle.css">
+
+	<script type="text/javascript" src="https://npmcdn.com/angular@1.5.5/angular.js"></script>
+	<script type="text/javascript" src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-leaflet-directive/0.10.0/angular-leaflet-directive.min.js"></script>
+	<script type="text/javascript" src="js/leaflet.label.js"></script>
+	<script type="text/javascript" src="js/angular-search-box-locationinfo.js"></script>
+
+	<style type="text/css">
+	#homebutton {
+		float: left;
+		margin-top: 5px;
+	}
+
+	.navbar-header {
+		float: right;
+	}
+
+	#map {
+		height: 500px;
+	}
+	</style>
+
+</head>
+	<body ng-controller="CoffeeController">
+		<div class="container-fluid outerdiv" >
+	          	<a href="index.html" id="homebutton" class="btn btn-info">home page</a>
+	     
+	    <nav class="navbar navbar-inverse navbar-fixed-top">
+	        <div class="container-fluid">
+	          <div class="navbar-header">
+	            <a class="navbar-brand" href="#"><span class="span-style">ricerca Foursquare per le caffetterie in Italia</span></a>
+	          </div>
+	        </div>
+	    </nav>
+
+	    <noscript>
+	        <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
+	    </noscript>
+
+      	<div class="input-group search-bar">
+
+		    <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control" placeholder="Inserire il nome del luogo italiano" autofocus />
+		    
+		    <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
+		</div>
+
+	  	<div class="results-container">
+	  		<p>La caffetteria più vicina, altamente raccomandata è <strong> {{coffee.response.groups[0].items[0].venue.name}}</strong></p>
+
+    		<span class="span-outer">
+          Ho trovato <strong>{{ coffeeItems.length }}</strong> caffetterie in <strong>{{ coffee.response.geocode.displayString }}</strong>
+        </span>
+          
+        <br />
+
+    	   <ul ng-model="update">
+	    		<li ng-repeat="item in coffeeItems track by $id(item)">
+		            <strong>{{item.venue.name}}</strong><br />
+		            {{item.venue.location.address}}<br />
+		            {{item.venue.location.postalCode}}<br />
+		            <strong>coordinate:</strong> {{item.venue.location.lat}}, {{item.venue.location.lng}}<br />
+	          	</li>
+    		</ul>
+	  	</div>
+
+		<div class="container-fluid">
+          <leaflet lf-center="coffeecentre" markers="markers" id="coffeemap"></leaflet>
+      	</div>
+
+      </div>
+  
+  </body>
+</html>
